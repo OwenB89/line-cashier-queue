@@ -8,3 +8,52 @@
 #nprogress .bar {
     background: limegreen !important;
 }
+
+.circleItem {
+    border-radius: 50%;   /* Makes the item circular */
+  width: 100px;         /* Fixed width */
+  height: 100px;        /* Fixed height to make it a circle */
+  display: flex;        /* Enables flexbox display properties */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;  /* Centers content vertically */
+  text-align: center;   /* Ensures text is centered */
+  border: 2px solid; /* Optional: adds a border */
+  margin: 10px auto;    /* Centers the item in the list and adds some margin */
+  background-color: #f0f0f0; /* Background color */
+  font-weight: bold;    /* Makes the text bold */
+  color: #1890ff;       /* Text color */
+}
+
+.customCard .ant-card-head {
+  border-bottom: 2px solid grey;
+  border-top: 2px solid grey;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.dividerCol {
+  position: relative;
+  margin-right: -1px; /* Overlaps the border of the next column to avoid double border width */
+}
+
+.dividerCol:not(:last-child):after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  border-radius: 25px;
+  background-color: grey;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
