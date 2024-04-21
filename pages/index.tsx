@@ -12,7 +12,7 @@ const IndexPage: Page = () => {
 
     const [queues, setQueue] = useAtom(queueListAtom);
 
-    function renderHidden (queues: string[]) {
+    function renderHidden (queues) {
         const displayed = queues.slice(0,3);
         const hidden = queues.length - 3;
         return(
