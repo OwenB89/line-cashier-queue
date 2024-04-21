@@ -62,7 +62,6 @@ const IndexPage: Page = () => {
     return (
         <div>
             <Title>Home</Title>
-            Hello World!
 
             <Row gutter={[256, 16]}>
                 {queues.map(( name,index) => (
@@ -76,7 +75,7 @@ const IndexPage: Page = () => {
             <Divider style={{ margin: '20px 0', height: '5px', backgroundColor: 'gray', borderRadius: 25 }}/>
 
             <Row className='center'>
-                <Col>
+                <Col className='inputCol'>
                     <form onSubmit={handleSubmit(onFormSubmit)}>
                         <Space direction="vertical" size={"small"} style={{ display: 'flex' }}>
                             <Row>
@@ -84,26 +83,26 @@ const IndexPage: Page = () => {
                                     <Controller 
                                         name="queue"
                                         control={control}
-                                        render={({ field }) => <Input id="name" placeholder="Product Name"
-                                            addonBefore="Product Name" {...field} />} 
+                                        render={({ field }) => <Input id="name" placeholder="Name"
+                                            addonBefore="Name:" {...field} />} 
                                           />
-                                    {errors.queue && <span className="text-red-500">{errors.queue.message}</span>}
+                                    {errors.queue && <p className="text-red-500">{errors.queue.message}</p>}
                                 </Col>
                             </Row>
-                            <Button type="primary" htmlType="submit" className="bg-blue-500">Enter Line</Button>
+                            <Button type="primary" htmlType="submit" className="createBtn">Enter Line</Button>
                         </Space>
                     </form>
                 </Col>
 
-                <Col>
+                <Col className='handleCol'>
                     <Row>
-                        <Button className="bg-red-500" onClick={() => onClickDeleteLine(0)}>Handle Cashier #1</Button>
+                        <Button className="delButton" onClick={() => onClickDeleteLine(0)}>Handle Cashier #1</Button>
                     </Row>
                     <Row>
-                        <Button className="bg-red-500" onClick={() => onClickDeleteLine(1)}>Handle Cashier #2</Button>
+                        <Button className="delButton" onClick={() => onClickDeleteLine(1)}>Handle Cashier #2</Button>
                     </Row>
                     <Row>
-                        <Button className="bg-red-500" onClick={() => onClickDeleteLine(2)}>Handle Cashier #3</Button>
+                        <Button className="delButton" onClick={() => onClickDeleteLine(2)}>Handle Cashier #3</Button>
                     </Row>
                 </Col>
             </Row>

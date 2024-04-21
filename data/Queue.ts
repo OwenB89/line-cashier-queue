@@ -9,7 +9,7 @@ import { atom } from "jotai";
  */
 const queueListAtom = atom<string[][]>([
     ["Alice Johnson", "John Doe"],
-    ["Chris Evan", "Molly Peters", "Steve Jobs"],
+    ["Chris Evan", "Molly Peters", "Steve Jobs","Mike Tyson","Jean Bart"],
     ["Mark Zuckerberg","Jean Goldberg"]
 ]);
 

@@ -10,18 +10,17 @@
 }
 
 .circleItem {
-    border-radius: 50%;   /* Makes the item circular */
-  width: 100px;         /* Fixed width */
-  height: 100px;        /* Fixed height to make it a circle */
-  display: flex;        /* Enables flexbox display properties */
-  justify-content: center; /* Centers content horizontally */
-  align-items: center;  /* Centers content vertically */
-  text-align: center;   /* Ensures text is centered */
-  border: 2px solid; /* Optional: adds a border */
-  margin: 10px auto;    /* Centers the item in the list and adds some margin */
-  background-color: #f0f0f0; /* Background color */
-  font-weight: bold;    /* Makes the text bold */
-  color: #1890ff;       /* Text color */
+    border-radius: 50%;   
+  width: 100px;         
+  height: 100px;        
+  display: flex;        
+  justify-content: center; 
+  align-items: center;  
+  text-align: center;   
+  border: 2px solid; 
+  margin: 10px auto;    
+  font-weight: bold;    
+  color: black;
 }
 
 .customCard .ant-card-head {
@@ -54,6 +53,27 @@
 .center {
   margin: auto;
   width: 50%;
-  border: 3px solid green;
+  border: 3px solid grey;
   padding: 10px;
+  border-radius: 25px;
+  align-items: center;
+}
+
+.delButton{
+    margin: 5px;
+    color:green;
+    border-color: green;
+}
+
+.handleCol{
+    margin-left: 100px;
+}
+
+.inputCol{
+    margin-left: 20px;
+}
+
+.createBtn{
+    color: blue;
+    border-color: blue;
 }
