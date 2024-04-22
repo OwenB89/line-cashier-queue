@@ -18,12 +18,12 @@ const IndexPage: Page = () => {
         return(
             <>
                 {displayed.map((item,index) => (
-                    <Card key={index} className='circleItem'>
+                    <Card key={index} className='rounded-full w-24 h-24 flex items-center justify-center text-center border-2 border-black mx-auto my-2.5 font-bold text-black'>
                         <p>{item}</p>
                     </Card>
                 ))}
 
-                {hidden > 0 && <div className='circleItem'>...{hidden} more people in line.</div>}
+                {hidden > 0 && <div className='rounded-full w-24 h-24 flex items-center justify-center text-center border-2 border-black mx-auto my-2.5 font-bold text-black'>...{hidden} more people in line.</div>}
             </>
         )
     }
@@ -65,17 +65,19 @@ const IndexPage: Page = () => {
 
             <Row gutter={[256, 16]}>
                 {queues.map(( name,index) => (
-                    <Col key={index} xs={24} sm={12} md={8} className="dividerCol">
-                        <Card title={`Queue #${index + 1}`} className="customCard" style={{borderWidth: 0}}>
+                    <Col key={index} xs={24} sm={12} md={8} className="relative mr-[-1px]">
+                        <Card title={<div className="border-b-2 border-black border-2 rounded-[25px] pt-[50px] pb-[50px] text-center p-3">
+                            {`Cashier #${index + 1}`}</div>} bordered={false}>
                             {queues[index] && renderHidden(queues[index])}
                         </Card>
+                        <div className="absolute right-0 top-0 bottom-0 w-[5px] rounded-full bg-gray-400"></div>
                     </Col>
                 ))}
             </Row>
-            <Divider style={{ margin: '20px 0', height: '5px', backgroundColor: 'gray', borderRadius: 25 }}/>
+            <Divider className='my-5 h-[5px] bg-gray-400 rounded-[25px]'/>
 
-            <Row className='center'>
-                <Col className='inputCol'>
+            <Row className='mx-auto w-1/2 border border-3 border-400 border-black p-2.5 rounded-[25px] items-center'>
+                <Col className='ml-5'>
                     <form onSubmit={handleSubmit(onFormSubmit)}>
                         <Space direction="vertical" size={"small"} style={{ display: 'flex' }}>
                             <Row>
@@ -89,20 +91,20 @@ const IndexPage: Page = () => {
                                     {errors.queue && <p className="text-red-500">{errors.queue.message}</p>}
                                 </Col>
                             </Row>
-                            <Button type="primary" htmlType="submit" className="createBtn">Enter Line</Button>
+                            <Button type="primary" htmlType="submit" className="text-blue-500 border border-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded flex items-center justify-center">Enter Line</Button>
                         </Space>
                     </form>
                 </Col>
 
-                <Col className='handleCol'>
+                <Col className='ml-[100px]'>
                     <Row>
-                        <Button className="delButton" onClick={() => onClickDeleteLine(0)}>Handle Cashier #1</Button>
+                        <Button className="m-[5px] text-green-500 border border-green-500" onClick={() => onClickDeleteLine(0)}>Handle Cashier #1</Button>
                     </Row>
                     <Row>
-                        <Button className="delButton" onClick={() => onClickDeleteLine(1)}>Handle Cashier #2</Button>
+                        <Button className="m-[5px] text-green-500 border border-green-500" onClick={() => onClickDeleteLine(1)}>Handle Cashier #2</Button>
                     </Row>
                     <Row>
-                        <Button className="delButton" onClick={() => onClickDeleteLine(2)}>Handle Cashier #3</Button>
+                        <Button className="m-[5px] text-green-500 border border-green-500" onClick={() => onClickDeleteLine(2)}>Handle Cashier #3</Button>
                     </Row>
                 </Col>
             </Row>

@@ -36,7 +36,7 @@
 
 .dividerCol {
   position: relative;
-  margin-right: -1px; /* Overlaps the border of the next column to avoid double border width */
+  margin-right: -1px;
 }
 
 .dividerCol:not(:last-child):after {
